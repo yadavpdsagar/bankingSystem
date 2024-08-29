@@ -33,10 +33,9 @@ public class AccountDetail {
     }
 
     private String Address;
-
+  private String Name;
     private Long balance;
-    @OneToOne(mappedBy = "accountDetail" , cascade = CascadeType.ALL)
-    private UserDetail userDetail;
+
 
     @ManyToOne
     @JoinColumn(name = "AccTypId")
@@ -44,5 +43,8 @@ public class AccountDetail {
 
     @OneToMany(mappedBy = "accountDetail")
     private List<TransactionDetail> transactionDetail = new ArrayList<>();
-
+//
+//    public int getUserDetail(Integer userId) {
+//        return this.getUserDetail(userId);
+//    }
 }

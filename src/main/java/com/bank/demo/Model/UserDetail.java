@@ -15,16 +15,16 @@ import lombok.Setter;
 @NoArgsConstructor
 public class UserDetail {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer UserId;
-    private String Name;
+    private String UserName;
   private  String email;
     private String Password;
 
     @Enumerated(EnumType.STRING  )
     private EmployeeRole role;
 
-    @OneToOne
-    private AccountDetail accountDetail;
+
 
 
 
