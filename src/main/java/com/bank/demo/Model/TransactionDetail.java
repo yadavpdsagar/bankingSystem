@@ -14,7 +14,9 @@ import lombok.Setter;
 public class TransactionDetail {
 
 @Id
+@GeneratedValue
     private  Integer TransactionId;
+ private  String name;
 
     @Enumerated(EnumType.STRING  )
 private TransactionType transactionType;
@@ -22,6 +24,7 @@ private TransactionType transactionType;
     private Long TransactionAmount;
 
     @ManyToOne
+    @JoinColumn(name = "account_detail_id")
     private AccountDetail accountDetail;
 
 

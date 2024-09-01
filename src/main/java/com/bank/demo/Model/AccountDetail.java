@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,7 +17,7 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AccountDetail {
+public class AccountDetail implements Serializable {
 
 
     @Id
@@ -41,10 +42,9 @@ public class AccountDetail {
     @JoinColumn(name = "AccTypId")
     private AccountType accountType;
 
-    @OneToMany(mappedBy = "accountDetail")
-    private List<TransactionDetail> transactionDetail = new ArrayList<>();
-//
-//    public int getUserDetail(Integer userId) {
-//        return this.getUserDetail(userId);
-//    }
+
+
+    @OneToMany(mappedBy = "accountDetail" ,cascade = CascadeType.ALL)
+    private List<TransactionDetail> transactionDetails = new ArrayList<>();
+
 }

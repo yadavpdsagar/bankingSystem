@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TransactionDetailRepo extends JpaRepository<TransactionDetail,Integer> {
+    TransactionDetail findByName(String name );
 }

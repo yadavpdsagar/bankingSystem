@@ -20,14 +20,13 @@ public class AccountDetailReqRes {
     private String error;
     private String message;
     private String accountNumber;
+    private String Name;
+    private Long balance;
     private String Address;
     private AccountType accountType;
     private AccountDetail accountDetail;
 
     private List<AccountDetailReqRes> accountDetailReqResList;
-
-
-
 
 
     private List<TransactionDetail> transactionDetail = new ArrayList<>();
