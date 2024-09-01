@@ -18,13 +18,13 @@ public class TransactionDetail {
     private  Integer TransactionId;
  private  String name;
 
-    @Enumerated(EnumType.STRING  )
+    @Enumerated(EnumType.STRING)
 private TransactionType transactionType;
 
     private Long TransactionAmount;
 
     @ManyToOne
-    @JoinColumn(name = "account_detail_id")
+    @JoinColumn(name = "accountNumber")
     private AccountDetail accountDetail;
 
 

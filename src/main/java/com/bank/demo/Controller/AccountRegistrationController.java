@@ -15,15 +15,7 @@ public class AccountRegistrationController {
     @Autowired
     private AccountDetialsService accountDetialsService;
 
-//    @PostMapping("/admin/accountregidtration")
-//    public ResponseEntity<AccountDetailReqRes> AccRegister(@RequestBody AccountDetailReqRes  accountDetailReqRes){
-//        return  ResponseEntity.ok(accountDetialsService.AccountRegistration(accountDetailReqRes));
-//    }
 
-//    @PostMapping("/createacc")
-//    public AccountDetail craeteaccount(@RequestBody AccountDetail accountDetail , AccountType accountType){
-//        return accountDetialsService.AccountRegistration(accountDetail, accountType.getAccTypId());
-//    }
 
     @PostMapping("/createacc")
     public AccountDetail createAccount(@RequestBody AccountDetail accountDetail) {
