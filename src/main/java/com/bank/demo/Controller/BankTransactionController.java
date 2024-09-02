@@ -23,3 +23,18 @@ public class BankTransactionController {
         }
     }
 
+/*
+* @RestController
+@RequestMapping("/api/transactions")
+public class TransactionDetailController {
+
+    @Autowired
+    private TransactionDetailService transactionDetailService;
+
+    @PostMapping
+    public ResponseEntity<TransactionDetail> createTransaction(@RequestBody TransactionDetail transactionDetail) {
+        TransactionDetail savedTransaction = transactionDetailService.saveTransaction(transactionDetail);
+        return ResponseEntity.ok(savedTransaction);
+    }
+}
+* */

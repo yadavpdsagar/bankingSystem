@@ -9,7 +9,8 @@ import java.util.Optional;
 
 @Repository
 public interface AccountTypeRepo extends JpaRepository<AccountType,String > {
-    Optional<AccountType> findById( String AccTypId  );
+    @Override
+    Optional<AccountType> findById(String AccTypId);
 }
 
 
