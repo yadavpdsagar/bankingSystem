@@ -19,13 +19,12 @@ public class UserDetialService {
         UserDetialsReqRes userDetialsReqRes= new UserDetialsReqRes();
         try{
             UserDetail userDetail = new UserDetail();
-
-            userDetail.setUserName(userRegisterRequest.getUserName());
-            userDetail.setEmail(userRegisterRequest.getEmail());
-            userDetail.setPassword(userRegisterRequest.getPassword());
-            userDetail.setRole(userRegisterRequest.getRole());
+         userDetail.setUserName(userRegisterRequest.getUserName());
+         userDetail.setEmail(userDetail.getEmail());
+         userDetail.setPassword(userDetail.getPassword());
+         userDetail.setRole(userDetail.getRole());
             UserDetail userDetailResult = userDetialRepo.save(userDetail);
-            if(userDetailResult.getUserId()!=null){
+            if(userDetailResult.getUserId()>0){
                 userDetialsReqRes.setUserDetail(userDetailResult);
             }
 

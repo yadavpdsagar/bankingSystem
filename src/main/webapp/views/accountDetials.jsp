@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="UTF-8">
-    <title>Account List</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>Account List</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-   <style>
+<style>
       .login-container {
         width: 400px;
         padding: 20px;
@@ -31,7 +30,7 @@
         border-radius: 5px; /* Rounded corners on hover */
       }
     </style>
-  <body>
+ <body>
     <nav class="navbar navbar-expand-sm navbar-custom">
       <div class="container-fluid">
         <h1>Account Detials</h1>
@@ -49,24 +48,28 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/Transctiondetialpage"
-                >see all tranction
-              </a>
+              <a class="nav-link" href="/accountRegistration.html"
+                >craete new account</a
+              >
             </li>
+          
           </ul>
         </div>
       </div>
     </nav>
 
     <div class="container mt-3">
-      <h2 class="text-center">Account Ledger</h2>
+      <h2 class="text-center">Account List</h2>
 
       <table class="table table-bordered">
         <thead class="table-primary">
           <tr>
-            <th>Ledger id</th>
-            <th>Account type</th>
-            <th>Total Balance</th>
+            <th>Account Number</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>created date</th>
+            <th>account type</th>
+            <th>Balance</th>
           </tr>
         </thead>
         <tbody>
@@ -74,7 +77,11 @@
             <td>July</td>
             <td>Dooley</td>
             <td>july@example.com</td>
+            <td>july@example.com</td>
+            <td>july@example.com</td>
+            <td>july@example.com</td>
           </tr>
+         
         </tbody>
       </table>
     </div>

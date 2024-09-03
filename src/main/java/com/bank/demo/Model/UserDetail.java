@@ -18,7 +18,7 @@ public class UserDetail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer UserId;
     private String UserName;
-  private  String email;
+   private  String email;
     private String Password;
 
     @Enumerated(EnumType.STRING  )
