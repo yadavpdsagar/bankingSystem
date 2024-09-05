@@ -24,6 +24,46 @@ public class UserDetail {
     @Enumerated(EnumType.STRING  )
     private EmployeeRole role;
 
+	public Integer getUserId() {
+		return UserId;
+	}
+
+	public void setUserId(Integer userId) {
+		UserId = userId;
+	}
+
+	public String getUserName() {
+		return UserName;
+	}
+
+	public void setUserName(String userName) {
+		UserName = userName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return Password;
+	}
+
+	public void setPassword(String password) {
+		Password = password;
+	}
+
+	public EmployeeRole getRole() {
+		return role;
+	}
+
+	public void setRole(EmployeeRole role) {
+		this.role = role;
+	}
+
 
 
 

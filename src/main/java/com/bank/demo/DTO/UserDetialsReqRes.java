@@ -28,4 +28,84 @@ public class UserDetialsReqRes {
 
   private AccountDetailReqRes accountDetailReqRes;
 
+public int getStatusCode() {
+	return statusCode;
+}
+
+public void setStatusCode(int statusCode) {
+	this.statusCode = statusCode;
+}
+
+public String getError() {
+	return error;
+}
+
+public void setError(String error) {
+	this.error = error;
+}
+
+public String getMessage() {
+	return message;
+}
+
+public void setMessage(String message) {
+	this.message = message;
+}
+
+public String getUserName() {
+	return UserName;
+}
+
+public void setUserName(String userName) {
+	UserName = userName;
+}
+
+public String getEmail() {
+	return email;
+}
+
+public void setEmail(String email) {
+	this.email = email;
+}
+
+public EmployeeRole getRole() {
+	return role;
+}
+
+public void setRole(EmployeeRole role) {
+	this.role = role;
+}
+
+public String getPassword() {
+	return password;
+}
+
+public void setPassword(String password) {
+	this.password = password;
+}
+
+public UserDetail getUserDetail() {
+	return userDetail;
+}
+
+public void setUserDetail(UserDetail userDetail) {
+	this.userDetail = userDetail;
+}
+
+public List<UserDetail> getUserDetailList() {
+	return userDetailList;
+}
+
+public void setUserDetailList(List<UserDetail> userDetailList) {
+	this.userDetailList = userDetailList;
+}
+
+public AccountDetailReqRes getAccountDetailReqRes() {
+	return accountDetailReqRes;
+}
+
+public void setAccountDetailReqRes(AccountDetailReqRes accountDetailReqRes) {
+	this.accountDetailReqRes = accountDetailReqRes;
+}
+
 }

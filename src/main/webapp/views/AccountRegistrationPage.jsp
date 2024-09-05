@@ -32,51 +32,65 @@
       }
     </style>
   <body>
-    <nav class="navbar navbar-expand-sm navbar-custom">
-      <div class="container-fluid">
-        <h1>Account Detials</h1>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/Transctiondetialpage"
-                >see all tranction
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+      <div class="container-fluid p-3 bg-primary text-white text-center">
+         <h1>Create Account</h1>
+       </div>
 
-    <div class="container mt-3">
-      <h2 class="text-center">Account Ledger</h2>
+       <div class="d-flex justify-content-center align-items-center vh-100">
+         <div class="-container">
+           <h2 class="text-center mb-4">Enter Your Details</h2>
 
-      <table class="table table-bordered">
-        <thead class="table-primary">
-          <tr>
-            <th>Ledger id</th>
-            <th>Account type</th>
-            <th>Total Balance</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>july@example.com</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+           <form action="/createacc" method="post" modelAttribute="accountReq"   >
+             <div class="form-floating mb-3">
+               <input
+                 type="text"
+                 class="form-control form-control-sm"
+                 id="name"
+                 placeholder="Enter Name"
+                 name="name"
+                 required
+               />
+               <label for="email">Name</label>
+             </div>
+             <div class="form-floating mb-3">
+               <input
+                 type="text"
+                 class="form-control form-control-sm"
+                 id="address"
+                 placeholder="Enter Address"
+                 name="address"
+                 required
+               />
+               <label for="Address">Address</label>
+             </div>
+
+             <div class="form-floating mb-3">
+               <select
+                 class="form-control form-control-sm"
+                 id="accountType"
+                 name="accountType.accTypId"
+                 required
+               >
+                 <option value="125">Fixed Deposit</option>
+                 <option value="225">saving</option>
+               </select>
+               <label for="accountType">Account type</label>
+             </div>
+               <div class="form-floating mb-3">
+                         <input
+                           type="number"
+                           class="form-control form-control-sm"
+                           id="balance"
+                           placeholder="Enter opening Balance"
+                           name="balance"
+                           required
+                         />
+                         <label for="balance">opening Balance</label>
+                       </div>
+
+             <button type="submit" class="btn btn-primary w-100">submit</button>
+           </form>
+         </div>
+       </div>
   </body>
 </html>

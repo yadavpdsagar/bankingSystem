@@ -10,78 +10,83 @@
 
 </head>
  <style>
-    .login-container {
-      width: 400px;
-      padding: 20px;
-      border-radius: 10px;
-      background-color: #f8f9fa; /* Light background for form */
-      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    }
-  </style>
-<body>
-<body>
-    <div class="container-fluid p-3 bg-primary text-white text-center">
-      <h1>Register user</h1>
-    </div>
+      .login-container {
+        width: 400px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #f8f9fa;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+      }
+      .navbar-custom {
+        background-color: #007bff; /* Primary blue color */
+      }
 
-    <div class="d-flex justify-content-center align-items-center vh-100">
-      <div class="login-container">
-        <h2 class="text-center mb-4">Enter Your Details</h2>
+      .navbar-nav .nav-link {
+        color: #fff !important; /* Ensure links are white */
+        padding: 10px 15px; /* Add padding for better spacing */
+        font-weight: 500; /* Slightly bolder text */
+      }
 
-        <form action="/#">
-          <div class="form-floating mb-3">
-            <input
-              type="text"
-              class="form-control form-control-sm"
-              id="name"
-              placeholder="Enter Name"
-              name="name"
-              required
-            />
-            <label for="email">Name</label>
-          </div>
+      .navbar-nav .nav-link:hover {
+        background-color: #0056b3; /* Darken on hover */
+        border-radius: 5px; /* Rounded corners on hover */
+      }
+    </style>
+ <body>
+    <nav class="navbar navbar-expand-sm navbar-custom">
+      <div class="container-fluid">
+        <h1>Account Detials</h1>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/accountRegistration.html"
+                >craete new account</a>
 
-          <div class="form-floating mb-3">
-            <input
-              type="email"
-              class="form-control form-control-sm"
-              id="email"
-              placeholder="Enter email"
-              name="email"
-              required
-            />
-            <label for="email">Email</label>
-          </div>
-          <div class="form-floating mb-3">
-            <select
-              class="form-control form-control-sm"
-              id="role"
-              name="role"
-              required
-            >
-              <option value="admin">Admin</option>
-              <option value="user">User</option>
-            </select>
-            <label for="role">User type</label>
-          </div>
-
-          <div class="form-floating mb-3">
-            <input
-              type="password"
-              class="form-control form-control-sm"
-              id="pwd"
-              placeholder="Enter password"
-              name="pswd"
-              required
-            />
-            <label for="pwd">Password</label>
-          </div>
-
-          <button type="submit" class="btn btn-primary w-100">Login</button>
-        </form>
+      
+            </li>
+          
+          </ul>
+        </div>
       </div>
-    </div>
+    </nav>
 
+    <div class="container mt-3">
+      <h2 class="text-center">Account List</h2>
+
+      <table class="table table-bordered">
+        <thead class="table-primary">
+          <tr>
+            <th>Account Number</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>created date</th>
+            <th>account type</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+            <td>july@example.com</td>
+            <td>july@example.com</td>
+            <td>july@example.com</td>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
   </body>
-</body>
 </html>

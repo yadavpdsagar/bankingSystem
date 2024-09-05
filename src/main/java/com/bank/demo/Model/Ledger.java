@@ -23,5 +23,31 @@ public class Ledger {
     private AccountType accountType;
 
     private Long TotalAmount;
+    
+
+	public int getLedgerId() {
+		return ledgerId;
+	}
+
+	public void setLedgerId(int ledgerId) {
+		this.ledgerId = ledgerId;
+	}
+
+	public AccountType getAccountType() {
+		return accountType;
+	}
+
+	public void setAccountType(AccountType accountType) {
+		this.accountType = accountType;
+	}
+
+	public Long getTotalAmount() {
+		return TotalAmount;
+	}
+
+	public void setTotalAmount(Long totalAmount) {
+		TotalAmount = totalAmount;
+	}
+    
 
 }

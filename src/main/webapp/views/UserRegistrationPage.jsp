@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -16,23 +16,29 @@
       box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     }
   </style>
+   <script type="text/javascript">
+            function clearForm() {
+                document.getElementById('myForm').reset();
+            }
+        </script>
   <body>
     <div class="container-fluid p-3 bg-primary text-white text-center">
       <h1>Register user</h1>
+      
     </div>
 
-    <div class="d-flex justify-content-center align-items-center vh-100">
+    <div  id="myForm" class="d-flex justify-content-center align-items-center vh-100">
       <div class="login-container">
         <h2 class="text-center mb-4">Enter Your Details</h2>
 
-        <form action="/#">
+        <form action="/admin/register" method="post" modelAttribute="reqRes"  >
           <div class="form-floating mb-3">
             <input
               type="text"
               class="form-control form-control-sm"
               id="name"
               placeholder="Enter Name"
-              name="name"
+              name="UserName"
               required
             />
             <label for="email">Name</label>
@@ -56,8 +62,8 @@
               name="role"
               required
             >
-              <option value="admin">Admin</option>
-              <option value="user">User</option>
+              <option value="ADMIN">Admin</option>
+              <option value="client">User</option>
             </select>
             <label for="role">User type</label>
           </div>
@@ -68,10 +74,10 @@
               class="form-control form-control-sm"
               id="pwd"
               placeholder="Enter password"
-              name="pswd"
+              name="Password"
               required
             />
-            <label for="pwd">Password</label>
+            <label for="Password">Password</label>
           </div>
 
           <button type="submit" class="btn btn-primary w-100">Login</button>
@@ -81,3 +87,6 @@
 
   </body>
 </html>
+
+
+

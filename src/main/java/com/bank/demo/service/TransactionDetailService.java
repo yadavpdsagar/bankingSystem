@@ -35,6 +35,7 @@ public class TransactionDetailService {
             if (transactionDetail.getTransactionType() == TransactionType.DEPOSIT ) {
                 accountDetail.setBalance(accountDetail.getBalance() + transactionDetail.getTransactionAmount());
              ledger.setTotalAmount(ledger.getTotalAmount()+transactionDetail.getTransactionAmount());
+
             } else if (transactionDetail.getTransactionType() == TransactionType.WITHDRAWAL) {
 
                 if (accountDetail.getBalance() < transactionDetail.getTransactionAmount()) {

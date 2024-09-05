@@ -26,28 +26,39 @@
       <div class="-container">
         <h2 class="text-center mb-4">Enter Your Details</h2>
 
-        <form action="/#">
+        <form action="/transactions/process"  method="post" modelAttribute="transactionReq">
+        <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control form-control-sm"
+                      id="name"
+                      placeholder=" Enter Depositor Name "
+                      name="name"
+                      required
+                    />
+                    <label for="name">Depositor Name </label>
+                  </div>
           <div class="form-floating mb-3">
             <input
               type="text"
               class="form-control form-control-sm"
-              id="Account_number"
+              id="accountNumber"
               placeholder=" Enter Account number"
-              name="Account_number"
+              name="accountDetail.accountNumber"
               required
             />
-            <label for="Account_number">Account number</label>
+            <label for="accountNumber">Account number</label>
           </div>
           <div class="form-floating mb-3">
             <input
               type="number"
               class="form-control form-control-sm"
-              id="Amount"
+              id="transactionAmount"
               placeholder="Enter Amount"
-              name="Amount"
+              name="transactionAmount"
               required
             />
-            <label for="Amount">Amount</label>
+            <label for="transactionAmount">Amount</label>
           </div>
 
           <div class="mb-3">
@@ -88,10 +99,9 @@
               class="form-control form-control-sm"
               id="transactionType"
               name="transactionType"
-              required
-            >
-              <option value="WD">Withdraw</option>
-              <option value="DP">Deposit</option>
+              required>
+              <option value="WITHDRAWAL">Withdraw</option>
+              <option value="DEPOSIT">Deposit</option>
             </select>
           </div>
 
@@ -111,19 +121,21 @@
           if (fixDepositRadio.checked) {
             // Disable Withdraw option when Fixed Deposit is selected
             transactionTypeSelect.querySelector(
-              'option[value="WD"]'
+              'option[value="WITHDRAWAL"]'
             ).disabled = true;
-            transactionTypeSelect.value = "DP"; // Set to Deposit by default
+            transactionTypeSelect.value = "DEPOSIT"; // Set to Deposit by default
           }
         });
 
         savingRadio.addEventListener("change", function () {
           // Enable Withdraw option when Savings Account is selected
           transactionTypeSelect.querySelector(
-            'option[value="WD"]'
+            'option[value="WITHDRAWAL"]'
           ).disabled = false;
         });
       });
     </script>
   </body>
 </html>
+
+

@@ -33,5 +33,45 @@ public class AccountType {
     private Ledger ledger;
 
 
+	public String getAccTypId() {
+		return AccTypId;
+	}
+
+
+	public void setAccTypId(String accTypId) {
+		AccTypId = accTypId;
+	}
+
+
+	public String getAccTyp() {
+		return AccTyp;
+	}
+
+
+	public void setAccTyp(String accTyp) {
+		AccTyp = accTyp;
+	}
+
+
+	public List<AccountDetail> getAccountDetailList() {
+		return accountDetailList;
+	}
+
+
+	public void setAccountDetailList(List<AccountDetail> accountDetailList) {
+		this.accountDetailList = accountDetailList;
+	}
+
+
+	public Ledger getLedger() {
+		return ledger;
+	}
+
+
+	public void setLedger(Ledger ledger) {
+		this.ledger = ledger;
+	}
+
+
 
 }

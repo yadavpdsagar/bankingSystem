@@ -27,6 +27,46 @@ private TransactionType transactionType;
     @JoinColumn(name = "accountNumber")
     private AccountDetail accountDetail;
 
+	public Integer getTransactionId() {
+		return TransactionId;
+	}
+
+	public void setTransactionId(Integer transactionId) {
+		TransactionId = transactionId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public TransactionType getTransactionType() {
+		return transactionType;
+	}
+
+	public void setTransactionType(TransactionType transactionType) {
+		this.transactionType = transactionType;
+	}
+
+	public Long getTransactionAmount() {
+		return TransactionAmount;
+	}
+
+	public void setTransactionAmount(Long transactionAmount) {
+		TransactionAmount = transactionAmount;
+	}
+
+	public AccountDetail getAccountDetail() {
+		return accountDetail;
+	}
+
+	public void setAccountDetail(AccountDetail accountDetail) {
+		this.accountDetail = accountDetail;
+	}
+
 
 
 

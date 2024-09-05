@@ -35,6 +35,7 @@ public class HomeController {
         System.out.println("this is Transctiondetialpage");
         return "Transctiondetialpage";
     }
+
     @RequestMapping("/AccountRegistrationPage")
     public String AccountRegistrationPage() {
         System.out.println("this is AccountRegistrationPage");
