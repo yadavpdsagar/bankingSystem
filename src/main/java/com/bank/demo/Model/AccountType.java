@@ -1,5 +1,8 @@
 package com.bank.demo.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,9 +11,9 @@ import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+
 import java.util.List;
-import java.util.Set;
+
 
 @Component
 @Setter
@@ -18,6 +21,8 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+
+@JsonIgnoreProperties({"ledger", "accountDetailList"})
 public class AccountType {
     @Id
 
@@ -26,10 +31,12 @@ public class AccountType {
     private  String AccTyp;
 
 @OneToMany(mappedBy = "accountType" , cascade = CascadeType.ALL)
+ //@JsonManagedReference
     private List<AccountDetail> accountDetailList = new ArrayList<>();
 
 
     @OneToOne(mappedBy = "accountType",cascade = CascadeType.ALL)
+	@JsonBackReference
     private Ledger ledger;
 
 

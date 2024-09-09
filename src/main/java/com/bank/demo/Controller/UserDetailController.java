@@ -3,13 +3,16 @@ package com.bank.demo.Controller;
 import com.bank.demo.DTO.UserDetialsReqRes;
 import com.bank.demo.Model.UserDetail;
 import com.bank.demo.service.UserDetialService;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;
-
+import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @Controller
@@ -34,19 +37,22 @@ public class UserDetailController {
     }
 
 
-
-
-
-//    @GetMapping("/registerpage")
-//    public String getRegisterPage( Model model) {
-//        model.addAttribute("user", new UserDetail());
-//        return "UserRegistrationPage";
-//    }
-
-
-    @GetMapping("/admin/userdetials")
-    public ResponseEntity<UserDetialsReqRes> getalluser(){
-        return ResponseEntity.ok(userDetialService.getAllUserDetial());
+  // this will fetch page only 
+    @GetMapping("/userlistpage")
+    public ModelAndView getUserlist() {
+    	ModelAndView modelAndView= new ModelAndView("UserDetials");
+    	return modelAndView;
     }
+
+
+ // this will fetch data 
+@GetMapping("/admin/userdetials")
+public List<UserDetail> userDetiaList(){
+	
+	return (List<UserDetail>) userDetialService.getAllUserDetial();
+}
+
+
+
 
 }

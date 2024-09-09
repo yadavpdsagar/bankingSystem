@@ -1,5 +1,6 @@
 package com.bank.demo.Model;
 
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
-
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -18,6 +19,8 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+
+@JsonIgnoreProperties({"transactionDetails"})
 public class AccountDetail  {
 	@Id
     private String accountNumber;
@@ -38,9 +41,11 @@ public class AccountDetail  {
 
     @ManyToOne
     @JoinColumn(name = "AccTypId")
+	//@JsonBackReference
     private AccountType accountType;
 
     @OneToMany(mappedBy = "accountDetail" ,cascade = CascadeType.ALL)
+	@JsonManagedReference
     private List<TransactionDetail> transactionDetails = new ArrayList<>();
 
     public String getAccountNumber() {
@@ -82,7 +87,7 @@ public class AccountDetail  {
   	public void setAccountType(AccountType accountType) {
   		this.accountType = accountType;
   	}
-
+    
   	public List<TransactionDetail> getTransactionDetails() {
   		return transactionDetails;
   	}

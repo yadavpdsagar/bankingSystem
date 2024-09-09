@@ -13,6 +13,7 @@ import java.util.List;
 public class UserDetialService {
     @Autowired
     private UserDetialRepo userDetialRepo;
+ 
 
 
     public UserDetialsReqRes userRegistration( UserDetialsReqRes userRegisterRequest){
@@ -36,26 +37,13 @@ public class UserDetialService {
         }
         return userDetialsReqRes;
     }
-
-    public UserDetialsReqRes getAllUserDetial(){
-        UserDetialsReqRes userDetialsReqRes = new UserDetialsReqRes();
-   try{
-       List<UserDetail> result = userDetialRepo.findAll();
-       if(!result.isEmpty()){
-           userDetialsReqRes.setUserDetailList(result);
-           userDetialsReqRes.setStatusCode(200);
-           userDetialsReqRes.setMessage("successfull");
-       }else {
-           userDetialsReqRes.setStatusCode(404);
-           userDetialsReqRes.setMessage("no user found");
-       }
-       return userDetialsReqRes;
-   } catch (Exception e) {
-       userDetialsReqRes.setStatusCode(500);
-       userDetialsReqRes.setMessage("error occured:"+e.getMessage());
-       return userDetialsReqRes;
-   }
+    
+    
+    
+    public List<UserDetail>  getAllUserDetial(){
+    	return userDetialRepo.findAll();
     }
+
 
 
 

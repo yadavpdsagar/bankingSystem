@@ -2,20 +2,34 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-  <title>Account List</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-<style>
-      .login-container {
-        width: 400px;
-        padding: 20px;
-        border-radius: 10px;
-        background-color: #f8f9fa;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  <head>
+    <meta charset="UTF-8" />
+    <title>DataTable Example with User API</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      
+    />
+    <!-- DataTables CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css"
+    />
+    <style>
+      .container {
+        margin-top: 20px;
       }
-      .navbar-custom {
+      table.dataTable thead th,
+      table.dataTable tfoot th {
+        text-align: center;
+      }
+      
+       .navbar-custom {
         background-color: #007bff; /* Primary blue color */
       }
 
@@ -30,10 +44,11 @@
         border-radius: 5px; /* Rounded corners on hover */
       }
     </style>
- <body>
-    <nav class="navbar navbar-expand-sm navbar-custom">
+  </head>
+  <body>
+     <nav class="navbar navbar-expand-sm navbar-custom">
       <div class="container-fluid">
-        <h1>Account Detials</h1>
+        <h1>User Detial</h1>
         <button
           class="navbar-toggler"
           type="button"
@@ -48,29 +63,24 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/AccountRegistrationPage"> craete new account</a>
-
-
+        <a class="nav-link"  href="/UserRegistrationPage"> create new User</a>
+        
             </li>
-
+          
           </ul>
         </div>
       </div>
     </nav>
-
-
-
-
+    
     <div class="container">
-      <h2 class="text-center">Account List</h2>
-      <table id="AccountDetail" class="table table-bordered"   >
+      <h2 class="text-center">User List</h2>
+      <table id="userdetial" class="table table-bordered"   >
         <thead class="table-primary" >
           <tr>
-            <th>accountNumber</th>
-            <th>address</th>
-            <th>name</th>
-            <th>balance</th>
-            <th>accTyp</th>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Role</th>
           </tr>
         </thead>
         <tbody>
@@ -84,7 +94,7 @@
     <!-- Bootstrap JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-
+   
     ></script>
     <!-- DataTables JS -->
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
@@ -93,29 +103,27 @@
       $(document).ready(function () {
         // Fetch data from JSONPlaceholder API
         $.ajax({
-          url: "http://localhost:8080/admin/accountdetials",
+          url: "http://localhost:8080/admin/userdetials",
           method: "GET",
           success: function (data) {
             // Map user data to table rows
-            var tableData = data.map(function (AccountDetail) {
+            var tableData = data.map(function (UserDetail) {
               return [
-            	  AccountDetail.accountNumber,
-            	  AccountDetail.address,
-            	  AccountDetail.name,
-            	  AccountDetail.balance,
-            	  AccountDetail.accountType.accTyp,
+            	  UserDetail.userId, // User ID
+            	  UserDetail.userName, // User Name
+            	  UserDetail.email, // Email
+            	  UserDetail.role, // Role (JSONPlaceholder does not have a role field)
               ];
             });
 
             // Initialize DataTable
-            $("#AccountDetail").DataTable({
+            $("#userdetial").DataTable({
               data: tableData,
               columns: [
-                { title: "accountNumber" },
-                { title: "address" },
-                { title: "name" },
-                { title: "balance" },
-                {title:"accTyp"}
+                { title: "user Id" },
+                { title: "User Name" },
+                { title: "Email" },
+                { title: "Role" },
               ],
             });
           },
@@ -125,6 +133,5 @@
         });
       });
     </script>
-
   </body>
 </html>

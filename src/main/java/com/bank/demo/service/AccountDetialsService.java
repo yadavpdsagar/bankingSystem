@@ -4,10 +4,11 @@ import com.bank.demo.DTO.AccountDetailReqRes;
 import com.bank.demo.Model.AccountDetail;
 import com.bank.demo.Model.AccountType;
 import com.bank.demo.Model.Ledger;
+import com.bank.demo.Model.UserDetail;
 import com.bank.demo.Repository.AccountDetialsRepo;
 import com.bank.demo.Repository.AccountTypeRepo;
 import com.bank.demo.Repository.LedgerRepo;
-import org.hibernate.mapping.List;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,7 @@ import java.util.Optional;
 
 @Component
 @Service
+
 public class AccountDetialsService {
     @Autowired
     private AccountDetialsRepo accountDetialsRepo;
@@ -51,11 +53,14 @@ public class AccountDetialsService {
 
         return accountDetialsRepo.save(accountDetail);
     }
+    
+    
+  public List<AccountDetail> getAccountDetails(){
+	  return accountDetialsRepo.findAll();
+  }
+    
 
 
+    
+   
 }
-
-// ledger.setTotalAmount(ledger.getTotalAmount()+transactionDetail.getTransactionAmount());
-//ledgerRepo.save(ledger);
-// AccountType accountType= accountDetail.getAccountType();
-// Ledger ledger = ledgerRepo.findById(accountType.getLedger().getLedgerId()).orElseThrow(()-> new RuntimeException("ledger not found"));

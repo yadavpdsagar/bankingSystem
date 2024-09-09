@@ -1,5 +1,8 @@
 package com.bank.demo.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,6 +28,7 @@ private TransactionType transactionType;
 
     @ManyToOne
     @JoinColumn(name = "accountNumber")
+	@JsonBackReference
     private AccountDetail accountDetail;
 
 	public Integer getTransactionId() {

@@ -1,5 +1,6 @@
 package com.bank.demo.Model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -20,6 +21,7 @@ public class Ledger {
     private int ledgerId;
 
     @OneToOne
+	@JsonManagedReference
     private AccountType accountType;
 
     private Long TotalAmount;
