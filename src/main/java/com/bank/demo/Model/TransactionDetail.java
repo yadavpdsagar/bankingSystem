@@ -28,7 +28,7 @@ private TransactionType transactionType;
 
     @ManyToOne
     @JoinColumn(name = "accountNumber")
-	@JsonBackReference
+	//@JsonBackReference
     private AccountDetail accountDetail;
 
 	public Integer getTransactionId() {

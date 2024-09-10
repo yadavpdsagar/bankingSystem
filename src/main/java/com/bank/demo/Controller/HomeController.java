@@ -13,12 +13,18 @@ public class HomeController {
         return "index";
     }
 
+
     @RequestMapping("/UserRegistrationPage")
     public String UserRegistrationPage() {
         System.out.println("this is UserRegistrationPage");
         return "UserRegistrationPage";
     }
 
+    @RequestMapping("/tractionList")
+    public String tractionList() {
+        System.out.println("tractionList");
+        return "tranctionList";
+    }
     @RequestMapping("/loginpage")
     public String loginpage() {
         System.out.println("this is loginpage");
