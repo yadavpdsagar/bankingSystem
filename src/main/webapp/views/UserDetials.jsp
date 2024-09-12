@@ -63,7 +63,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-        <a class="nav-link"  href="/UserRegistrationPage"> create new User</a>
+        <a class="nav-link"  href="/admin/UserRegistrationPage"> create new User</a>
         
             </li>
           
@@ -110,7 +110,7 @@
             var tableData = data.map(function (UserDetail) {
               return [
             	  UserDetail.userId, // User ID
-            	  UserDetail.userName, // User Name
+            	  UserDetail.username, // User Name
             	  UserDetail.email, // Email
             	  UserDetail.role, // Role (JSONPlaceholder does not have a role field)
               ];

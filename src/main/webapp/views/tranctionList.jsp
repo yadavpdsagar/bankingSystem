@@ -92,7 +92,7 @@
       $(document).ready(function () {
         // Fetch data from JSONPlaceholder API
         $.ajax({
-          url: "http://localhost:8080/transactions/tractionListget",
+          url: "http://localhost:8080/adminemployee/tractionListget",
           method: "GET",
           success: function (data) {
             // Map user data to table rows

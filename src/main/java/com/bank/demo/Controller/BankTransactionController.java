@@ -12,7 +12,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/transactions")
+@RequestMapping
 public class BankTransactionController {
 
  @Autowired
@@ -21,13 +21,13 @@ public class BankTransactionController {
 
 
 
-    @PostMapping("/process")
+    @PostMapping("/employee/process")
 public ModelAndView processTransaction (TransactionDetail transactionReq  , Model model){
         TransactionDetail transactionDetail = transactionDetailService.saveTransaction(transactionReq );
         return new ModelAndView("Success");
     }
 
-    @GetMapping("/tractionListget")
+    @GetMapping("/adminemployee/tractionListget")
     public List<TransactionDetail> tractionList(){
         return transactionDetailService.getAllTraction();
     }

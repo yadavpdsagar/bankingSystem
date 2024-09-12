@@ -28,11 +28,58 @@
       .hero-section h1 {
         margin-bottom: 20px;
       }
+      .hero-section {
+        text-align: center;
+        padding: 50px 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+      }
     </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-      <h1 class="navbar-brand">Banking System</h1>
+      <h1 class="navbar-brand" >Banking system</h1>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <!-- Dropdown Menu -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle shift-right"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+
+            >
+              Menu
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <a class="nav-link" href="/admin/UserRegistrationPage">User Registration</a>
+               <a class="nav-link" href="/admin/Ledgerpage">Ledger Detial</a>
+               <a class="nav-link" href="/admin/AccountRegistrationPage">Account Registration</a>
+               <a class="nav-link" href="/adminemployee/accountDetials">Account Detials</a>
+               <a class="nav-link" href="/admin/userlistpage">user list </a>
+               <a class="nav-link" href="/adminemployee/tractionList"> Transction list  </a>
+           </div>
+          </li>
+        </ul>
+      </div>
+      
+
+    
     </nav>
 
     <div
@@ -50,34 +97,12 @@
           SecureBank is here to help you manage your finances effectively.
           Discover more and let us assist you in achieving your financial goals!
         </p>
-        <!-- Button to trigger the modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#comingSoonModal">
-          Upcoming Feature
-        </button>
-      </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="comingSoonModal" tabindex="-1" aria-labelledby="comingSoonModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="comingSoonModalLabel">Feature Coming Soon</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            We are excited to bring you new features soon. Stay tuned for updates!
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
       </div>
     </div>
 
     <!-- Add Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

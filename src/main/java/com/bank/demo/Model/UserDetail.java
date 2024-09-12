@@ -8,10 +8,10 @@ import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 
+@Getter
 @Component
 @Entity
 @Setter
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDetail {
@@ -29,39 +29,39 @@ public class UserDetail {
 		return UserId;
 	}
 
-	public void setUserId(Integer userId) {
-		UserId = userId;
-	}
-
 	public String getUsername() {
 		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
 	}
 
 	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	public String getPassword() {
 		return Password;
-	}
-
-	public void setPassword(String password) {
-		Password = password;
 	}
 
 	public EmployeeRole getRole() {
 		return role;
 	}
 
-	public void setRole(EmployeeRole role) {
+	public void setUserId(Integer userId) {
+		UserId = userId;
+	}
+
+    public void setUsername(String username) {
+		this.username = username;
+	}
+
+    public void setEmail(String email) {
+		this.email = email;
+	}
+
+    public void setPassword(String password) {
+		Password = password;
+	}
+
+    public void setRole(EmployeeRole role) {
 		this.role = role;
 	}
 

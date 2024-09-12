@@ -27,14 +27,14 @@ public class AccountRegistrationController {
 
 
 
-    @PostMapping("/createacc")
+    @PostMapping("/admin/createacc")
   public ModelAndView createAccount (AccountDetail  accountReq , Model model){
         AccountDetail accountDetail = accountDetialsService.AccountRegistration(accountReq , accountReq.getAccountType().getAccTypId());
         return new ModelAndView("Success");
     }
     
     
-   @GetMapping("/admin/accountdetials")
+   @GetMapping("/adminemployee/accountdetialslist")
    public List<AccountDetail> accountDetailsList(){
 	   return accountDetialsService.getAccountDetails();
    }

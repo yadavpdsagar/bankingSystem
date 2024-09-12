@@ -13,17 +13,21 @@ import java.util.Collection;
 import java.util.List;
 @Component
 @NoArgsConstructor
-@AllArgsConstructor
 @Configuration
 public class UserPrincipal implements UserDetails {
 
     @Autowired
     private UserDetail userDetail;
 
+    public UserPrincipal(UserDetail userDetail) {
+        this.userDetail = userDetail;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(userDetail.getRole().name()));
     }
+
 
     @Override
     public String getPassword() {

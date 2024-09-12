@@ -14,7 +14,7 @@ public class LedgerController {
 @Autowired
     private LedgerService ledgerService;
 
-@GetMapping("/getallledger")
+@GetMapping("/admin/getallledger")
     public List<Ledger> ledgerList(){
     return  ledgerService.getAllLedger();
 }

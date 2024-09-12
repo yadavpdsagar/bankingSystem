@@ -19,14 +19,22 @@ public class SecurityConfig {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    @Autowired
+    private CustomAuthenticationSuccessHandler customSuccessHandler;
+
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
          httpSecurity.csrf(customizer->customizer.disable())
-                .authorizeHttpRequests(request->request.requestMatchers("/auth/**","/public/**")
-                        .permitAll()
-                        .requestMatchers("user/**").hasAnyAuthority("ADMIN")
+                .authorizeHttpRequests(request->request.requestMatchers("/user").permitAll()
+                        .requestMatchers("/admin/**").hasAnyAuthority("ADMIN")
+                        .requestMatchers("/employee/**").hasAnyAuthority("EMPLOYEE")
+                        .requestMatchers("/adminemployee/**").hasAnyAuthority("ADMIN","EMPLOYEE")
                         .anyRequest().authenticated())
-               .formLogin(Customizer.withDefaults())
+
+               .formLogin((formLogin -> formLogin
+                       .successHandler(customSuccessHandler)
+                       .permitAll()))
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session-> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED));
         return  httpSecurity .build();

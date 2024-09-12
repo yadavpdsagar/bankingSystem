@@ -7,17 +7,7 @@
     <title>UserRegistrationPage</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
- <script>
-      function clearInputField() {
-        document.getElementById("myInput").value = "";
-      }
-
-      function handleFormSubmit(event) {
-        event.preventDefault(); // Prevent default form submission
-        clearInputField(); // Clear the input field
-        document.getElementById("myForm").submit(); // Submit the form programmatically
-      }
-    </script>
+ 
 </head>
   <style>
     .login-container {
@@ -28,11 +18,7 @@
       box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     }
   </style>
-   <script type="text/javascript">
-            function clearForm() {
-                document.getElementById('myForm').reset();
-            }
-        </script>
+ 
   <body>
     <div class="container-fluid p-3 bg-primary text-white text-center">
       <h1>Register user</h1>
@@ -75,7 +61,7 @@
               required
             >
               <option value="ADMIN">Admin</option>
-              <option value="client">User</option>
+              <option value="EMPLOYEE">User</option>
             </select>
             <label for="role">User type</label>
           </div>
@@ -92,7 +78,7 @@
             <label for="Password">Password</label>
           </div>
 
-          <button type="submit" class="btn btn-primary w-100">Login</button>
+          <button type="submit" class="btn btn-primary w-100">Summit</button>
         </form>
       </div>
     </div>

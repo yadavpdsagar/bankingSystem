@@ -26,7 +26,7 @@
       <div class="-container">
         <h2 class="text-center mb-4">Enter Your Details</h2>
 
-        <form action="/transactions/process"  method="post" modelAttribute="transactionReq">
+        <form action="/employee/process"  method="post" modelAttribute="transactionReq">
         <div class="form-floating mb-3">
                     <input
                       type="text"

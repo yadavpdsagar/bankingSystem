@@ -38,7 +38,7 @@ public class UserDetailController {
 
 
   // this will fetch page only 
-    @GetMapping("/userlistpage")
+    @GetMapping("/admin/userlistpage")
     public ModelAndView getUserlist() {
     	ModelAndView modelAndView= new ModelAndView("UserDetials");
     	return modelAndView;

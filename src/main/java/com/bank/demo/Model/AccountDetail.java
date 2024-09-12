@@ -41,7 +41,6 @@ public class AccountDetail  {
 
     @ManyToOne
     @JoinColumn(name = "AccTypId")
-	//@JsonBackReference
     private AccountType accountType;
 
     @OneToMany(mappedBy = "accountDetail" ,cascade = CascadeType.ALL)

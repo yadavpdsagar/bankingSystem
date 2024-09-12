@@ -14,7 +14,9 @@
         <h4 class="alert-heading">Success!</h4>
         <p>Your data has been saved successfully.</p>
         <hr>
-        <p class="mb-0">You can go back to the <a href="/" class="btn btn-primary">home page</a>.</p>
+        
+        <p class="mb-0">You can go back to the <a href="/admin" class="btn btn-primary">home page</a>.</p>
+
     </div>
 </div>
 
