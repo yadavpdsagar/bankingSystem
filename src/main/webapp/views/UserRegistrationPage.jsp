@@ -6,6 +6,18 @@
 <meta charset="UTF-8">
     <title>UserRegistrationPage</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+ <script>
+      function clearInputField() {
+        document.getElementById("myInput").value = "";
+      }
+
+      function handleFormSubmit(event) {
+        event.preventDefault(); // Prevent default form submission
+        clearInputField(); // Clear the input field
+        document.getElementById("myForm").submit(); // Submit the form programmatically
+      }
+    </script>
 </head>
   <style>
     .login-container {
@@ -84,6 +96,9 @@
         </form>
       </div>
     </div>
+    
+    
+ 
 
   </body>
 </html>

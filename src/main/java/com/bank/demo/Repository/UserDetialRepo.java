@@ -16,4 +16,6 @@ public interface UserDetialRepo extends JpaRepository<UserDetail,Integer> {
 
 
     Optional<UserDetail> findById(Integer integer);
+
+    UserDetail findByusername(String username);
 }

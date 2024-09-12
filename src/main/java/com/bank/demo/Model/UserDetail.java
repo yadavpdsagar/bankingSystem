@@ -5,9 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.stereotype.Component;
 
 
-
+@Component
 @Entity
 @Setter
 @Getter
@@ -17,7 +18,7 @@ public class UserDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer UserId;
-    private String UserName;
+    private String username;
    private  String email;
     private String Password;
 
@@ -32,12 +33,12 @@ public class UserDetail {
 		UserId = userId;
 	}
 
-	public String getUserName() {
-		return UserName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		UserName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getEmail() {
