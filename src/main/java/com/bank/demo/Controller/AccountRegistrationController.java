@@ -30,7 +30,7 @@ public class AccountRegistrationController {
     @PostMapping("/admin/createacc")
   public ModelAndView createAccount (AccountDetail  accountReq , Model model){
         AccountDetail accountDetail = accountDetialsService.AccountRegistration(accountReq , accountReq.getAccountType().getAccTypId());
-        return new ModelAndView("Success");
+        return new ModelAndView("AccountRegistrationPage");
     }
     
     

@@ -29,7 +29,7 @@
       <div class="login-container">
         <h2 class="text-center mb-4">Enter Your Details</h2>
 
-        <form action="/admin/register" method="post" modelAttribute="reqRes"  >
+        <form id="contactForm" action="/admin/register" method="post" modelAttribute="reqRes"  onsubmit="handleSubmit(event)"  >
           <div class="form-floating mb-3">
             <input
               type="text"
@@ -83,7 +83,41 @@
       </div>
     </div>
     
+    <!-- Modal -->
+     <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Success</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Your data has been successfully submitted!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+       
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" ></script>
     
+     <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Your form submission logic here
+            // For demonstration, we'll just log a message
+            console.log('Form submitted');
+            // Show the success modal
+            var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+            successModal.show();
+            // Clear the form fields
+            document.getElementById('contactForm').reset();
+        }
+    </script>
  
 
   </body>
