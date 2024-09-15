@@ -15,7 +15,7 @@
         <p>Your data has been saved successfully.</p>
         <hr>
         
-        <p class="mb-0">You can go back to the <a href="/employee" class="btn btn-primary">home page</a>.</p>
+        <p class="mb-0">You can go back to the <a href="/employee" class="btn btn-primary">home page</a></p>
 
     </div>
 </div>

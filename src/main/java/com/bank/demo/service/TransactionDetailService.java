@@ -1,6 +1,8 @@
 package com.bank.demo.service;
 
 import com.bank.demo.Model.*;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import com.bank.demo.Repository.AccountDetialsRepo;
 import com.bank.demo.Repository.LedgerRepo;
 import com.bank.demo.Repository.TransactionDetailRepo;
@@ -20,6 +22,12 @@ public class TransactionDetailService {
     private AccountDetialsRepo accountDetialsRepo;
     @Autowired
    private LedgerRepo ledgerRepo;
+    
+    @Autowired
+    UserDetail userdetail;
+    
+    private final Map<String, Long> submissionLocks = new ConcurrentHashMap<>();
+    private static final long LOCK_DURATION_MS = 5000; // 5 seconds lock duration
 
 
     @Transactional
@@ -60,6 +68,17 @@ public class TransactionDetailService {
         // Save the transaction detail
         return transactionDetailRepo.save(transactionDetail);
     }
+    
+    
+    private boolean isLocked(String userId) {
+        Long lastSubmissionTime = submissionLocks.get(userId);
+        return lastSubmissionTime != null && (System.currentTimeMillis() - lastSubmissionTime < LOCK_DURATION_MS);
+    }
+
+    private void lockSubmission(String userId) {
+        submissionLocks.put(userId, System.currentTimeMillis());
+    }
+    
 
    public List<TransactionDetail> getAllTraction(){
         return transactionDetailRepo.findAll();

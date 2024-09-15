@@ -29,14 +29,14 @@
       <div class="login-container">
         <h2 class="text-center mb-4">Enter Your Details</h2>
 
-        <form id="contactForm" action="/admin/register" method="post" modelAttribute="reqRes"  onsubmit="handleSubmit(event)"  >
+        <form id="contactForm" action="/admin/register" method="post" modelAttribute="reqRes"  )"  >
           <div class="form-floating mb-3">
             <input
               type="text"
               class="form-control form-control-sm"
               id="name"
               placeholder="Enter Name"
-              name="UserName"
+              name="userName"
               required
             />
             <label for="email">Name</label>

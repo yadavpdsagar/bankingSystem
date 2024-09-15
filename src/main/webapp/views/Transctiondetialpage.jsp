@@ -105,7 +105,9 @@
             </select>
           </div>
 
-          <button type="submit" class="btn btn-primary w-100">Submit</button>
+         
+          <button type="submit" id="submitButton" class="btn btn-primary w-100">Submit</button>
+     
         </form>
       </div>
     </div>
@@ -134,6 +136,13 @@
           ).disabled = false;
         });
       });
+        // for summition 
+      document.addEventListener("DOMContentLoaded", function () {
+          const form = document.getElementById("transactionForm");
+          const submitButton = document.getElementById("submitButton");
+
+          form.addEventListener("submit", function () {
+            submitButton.disabled = true;
     </script>
   </body>
 </html>
