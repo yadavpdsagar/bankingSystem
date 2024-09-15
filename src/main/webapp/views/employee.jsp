@@ -76,7 +76,7 @@
         </ul>
       </div>
 
-    
+    <a href="/logout" class="btn btn-primary">logout</a>
     </nav>
 
     <div

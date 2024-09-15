@@ -1,6 +1,6 @@
 package com.bank.demo.Controller;
 
-import com.bank.demo.DTO.AccountDetailReqRes;
+
 import com.bank.demo.Model.AccountDetail;
 import com.bank.demo.Model.AccountType;
 import com.bank.demo.service.AccountDetialsService;
@@ -30,7 +30,7 @@ public class AccountRegistrationController {
     @PostMapping("/admin/createacc")
   public ModelAndView createAccount (AccountDetail  accountReq , Model model){
         AccountDetail accountDetail = accountDetialsService.AccountRegistration(accountReq , accountReq.getAccountType().getAccTypId());
-        return new ModelAndView("AccountRegistrationPage");
+        return new ModelAndView("Success");
     }
     
     

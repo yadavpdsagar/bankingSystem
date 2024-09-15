@@ -24,7 +24,7 @@ public class BankTransactionController {
     @PostMapping("/employee/process")
 public ModelAndView processTransaction (TransactionDetail transactionReq  , Model model){
         TransactionDetail transactionDetail = transactionDetailService.saveTransaction(transactionReq );
-        return new ModelAndView("Success");
+        return new ModelAndView("employeeSuccess");
     }
 
     @GetMapping("/adminemployee/tractionListget")
